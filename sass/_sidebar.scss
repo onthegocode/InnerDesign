@@ -1,0 +1,29 @@
+.sidebar {
+	grid-area: 1 / 11 / 2 / -1;
+	justify-self: center;
+	background-color: goldenrod;
+	padding: 6rem;
+	max-height: 70rem;
+	animation: fadedownsidebar 1s ease-in-out;
+}
+.nav {
+	opacity: 0;
+	width: 0;
+	visibility: hidden;
+	&__items {
+		list-style: none;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		z-index: 10;
+	}
+
+	li a {
+		font-family: $main-font;
+		font-size: 10rem;
+		text-decoration: none;
+		color: $color-black;
+	}
+}

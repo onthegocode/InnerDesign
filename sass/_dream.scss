@@ -1,0 +1,22 @@
+.dream {
+	grid-area: 4 / 2 / 5 / 12;
+	background-image: linear-gradient(
+			rgba($color-black, 0.4),
+			rgba($color-black, 0.4)
+		),
+		url(../content/dream-2x.png);
+	background-size: cover;
+	background-position: center;
+	display: grid;
+	align-content: center;
+	width: 100%;
+
+	&__items {
+		flex-direction: column;
+		padding-left: 6vw;
+		padding-bottom: 18vh;
+		color: #fff;
+		line-height: 1;
+		animation: fadeup 1s ease;
+	}
+}
