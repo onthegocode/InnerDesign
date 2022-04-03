@@ -2,6 +2,26 @@
 	grid-area: 3 / 2 / 4 / 13;
 	@include contentgrid;
 	margin-bottom: 18rem;
+	&__animate {
+		.styles {
+			&__box {
+				opacity: 1;
+				animation: fadedownsidebar 0.8s ease-in-out;
+			}
+			&__img {
+				opacity: 1;
+				animation: fadeupsidebar 0.8s ease-in-out;
+			}
+			&__content {
+				opacity: 1;
+				animation: faderight 0.8s ease-in-out;
+			}
+			&__text {
+				opacity: 1;
+				animation: fade 2s ease-in-out;
+			}
+		}
+	}
 	&__box {
 		background-color: $color-primary;
 		grid-area: 1 / 11 / 10 / -1;
@@ -10,7 +30,7 @@
 		width: 70%;
 		height: 100%;
 		z-index: 1;
-		animation: fadedownsidebar 0.8s ease-in-out;
+		opacity: 0;
 	}
 	&__img {
 		display: block;
@@ -22,7 +42,7 @@
 		background-position: right;
 		max-height: 80rem;
 		width: 100%;
-		animation: fadeupsidebar 0.8s ease-in-out;
+		opacity: 0;
 	}
 	&__content {
 		grid-area: 6 / 1 / 16 / 9;
@@ -38,8 +58,8 @@
 		width: 80%;
 		padding: 6.4rem;
 		z-index: 3;
-		animation: faderight 0.8s ease-in-out;
 		padding-bottom: 16rem;
+		opacity: 0;
 	}
 	&__text {
 		transform: translateX(-30%) rotate(-90deg);
@@ -47,6 +67,6 @@
 		z-index: -1;
 		justify-self: start;
 		align-self: end;
-		animation: fade 2s ease-in-out;
+		opacity: 0;
 	}
 }

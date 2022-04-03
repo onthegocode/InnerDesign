@@ -108,6 +108,7 @@ body {
 //Go Top
 
 .scroll-top {
+	display: none;
 	&:link,
 	&:visited {
 		position: fixed;

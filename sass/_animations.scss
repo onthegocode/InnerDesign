@@ -78,7 +78,7 @@
 		opacity: 0;
 		transform: translateY(100%);
 	}
-	25% {
+	60% {
 		opacity: 0;
 		transform: translateY(100%);
 	}
@@ -147,11 +147,13 @@
 	}
 }
 
-@keyframes test {
+@keyframes footer {
 	0% {
-		transform: translateY(0);
+		opacity: 0;
+		transform: translateY(20%);
 	}
 	100% {
-		transform: translateY(-100%);
+		opacity: 1;
+		transform: translateY(0%);
 	}
 }

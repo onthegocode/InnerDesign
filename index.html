@@ -18,26 +18,26 @@
 		></a>
 		<div class="scroll-progress" id="scroll-progress"></div>
 		<div class="container">
-			<div class="sidebar" id="sidebar">
-				<input type="checkbox" class="sidebar__checkbox" id="navi-toggle" />
-				<div class="container__circle">
-					<div class="sidebar__circle"></div>
-				</div>
-				<label for="navi-toggle" class="sidebar__button">
-					<a class="sidebar__icon"></a>
-				</label>
-				<nav class="nav">
-					<ul class="nav__items">
-						<li><a class="nav__items--1" href="#interior">Interior</a></li>
-						<li><a class="nav__items--2" href="#styles">Styles</a></li>
-						<li><a class="nav__items--3" href="#design">Design</a></li>
-						<li>
-							<a class="nav__item--4" href="/contact-us">Get in Touch</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
 			<header class="header">
+				<div class="sidebar" id="sidebar">
+					<input type="checkbox" class="sidebar__checkbox" id="navi-toggle" />
+					<div class="container__circle">
+						<div class="sidebar__circle"></div>
+					</div>
+					<label for="navi-toggle" class="sidebar__button">
+						<a class="sidebar__icon"></a>
+					</label>
+					<nav class="nav">
+						<ul class="nav__items">
+							<li><a class="nav__items--1" href="#interior">Interior</a></li>
+							<li><a class="nav__items--2" href="#styles">Styles</a></li>
+							<li><a class="nav__items--3" href="#design">Design</a></li>
+							<li>
+								<a class="nav__item--4" href="/contact-us">Get in Touch</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
 				<figure>
 					<div class="video-player">
 						<a class="vid__btn" id="play-pause">
@@ -79,7 +79,7 @@
 					</figcaption>
 				</figure>
 			</header>
-			<section class="interior mb-huge" id="interior">
+			<section class="interior mb-huge hidden" id="interior">
 				<div class="interior__box">&nbsp;</div>
 				<div class="interior__img">&nbsp;</div>
 				<div class="interior__content">
@@ -108,7 +108,7 @@
 				</div>
 				<div class="interior__text big-text">im</div>
 			</section>
-			<section class="styles" id="styles">
+			<section class="styles hidden2" id="styles">
 				<div class="styles__box">&nbsp;</div>
 				<div class="styles__img">&nbsp;</div>
 				<div class="styles__content">
@@ -137,7 +137,7 @@
 				</div>
 				<div class="styles__text big-text">life</div>
 			</section>
-			<section class="dream" id="design">
+			<section class="dream hidden3" id="design">
 				<div class="dream__items">
 					<h3 class="caption--2 ml-small">Designs For You</h3>
 					<h1 class="heading-1 mb-medium">Design your dream home</h1>
@@ -148,7 +148,7 @@
 					<a href="#" class="btn ml-small">Get in Touch</a>
 				</div>
 			</section>
-			<footer class="footer">
+			<footer class="footer hidden4">
 				<img
 					src="content/Vector.png"
 					alt="Inner Design Logo"
@@ -184,7 +184,9 @@
 						</ul>
 					</div>
 				</nav>
-				<div class="copyright">&copy;<span>2022</span> Inner Design</div>
+				<div class="copyright hidden5">
+					&copy;<span>2022</span> Inner Design
+				</div>
 			</footer>
 		</div>
 		<script src="js/script.js"></script>

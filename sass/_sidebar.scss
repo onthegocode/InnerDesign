@@ -1,12 +1,11 @@
 .sidebar {
-	grid-area: 1 / 11 / 2 / -1;
-	justify-self: center;
 	background-color: $color-primary;
 	padding: 8rem;
 	max-height: 70rem;
 	animation: fadedownsidebar 1s ease-in-out;
 	position: relative;
-	overflow: hidden;
+	grid-area: 1 / 11 / 2 / -1;
+	justify-self: center;
 	&__button {
 		width: 6rem;
 		height: 6rem;
@@ -49,6 +48,17 @@
 			transform: translateY(15px);
 		}
 	}
+	&__circle {
+		width: 6rem;
+		height: 6rem;
+		position: absolute;
+		right: 1.3rem;
+		top: 1.6rem;
+		background-color: $color-primary;
+		border-radius: 100%;
+		transition: all 0.6s ease-in-out;
+		z-index: 100;
+	}
 	&__checkbox {
 		display: none;
 		&:checked ~ .sidebar__button {
@@ -65,19 +75,11 @@
 		&:checked ~ .container__circle {
 			.sidebar__circle {
 				transform: scale(100);
+				position: fixed;
+				right: 1.3rem;
+				top: 1.6rem;
 			}
 		}
-	}
-	&__circle {
-		width: 6rem;
-		height: 6rem;
-		position: absolute;
-		right: 1.3rem;
-		top: 1.6rem;
-		background-color: $color-primary;
-		border-radius: 100%;
-		transition: all 0.6s ease-in-out;
-		z-index: 100;
 	}
 }
 .nav {
