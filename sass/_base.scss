@@ -24,6 +24,7 @@ body {
 	font-weight: 400;
 	position: relative;
 	height: 100vh;
+	overflow-x: hidden;
 }
 //mixin
 @mixin contentgrid {
@@ -59,7 +60,10 @@ body {
 
 .contact--container {
 	display: grid;
-	grid-template: 100vh / repeat(2, 1fr) 6rem;
+	// YOu some times have to use template rows and columns seperatly due to it having issues with compiling
+	// grid-template: 100vh / repeat(2, 1fr) 6rem;
+	grid-template-rows: 100vh;
+	grid-template-columns: repeat(2, 1fr) 6rem;
 }
 .btn {
 	&:link,
@@ -104,9 +108,50 @@ body {
 //Go Top
 
 .scroll-top {
-	position: fixed;
-	bottom: 8%;
-	right: 4%;
-	z-index: 20;
-	text-decoration: none;
+	&:link,
+	&:visited {
+		position: fixed;
+		z-index: 20;
+		text-decoration: none;
+		border-radius: 2rem;
+		fill: $color-primary;
+		bottom: 5%;
+		right: 3.25%;
+		width: 5rem;
+		height: 5rem;
+		padding: 0 3rem;
+		background-color: rgba(#fff, 1);
+		svg {
+			position: fixed;
+			width: 3rem;
+			height: 3rem;
+			bottom: 5.72%;
+			right: 4.08%;
+			&:nth-child(1) {
+				animation: arrowup1 16s infinite;
+
+				bottom: 5.72%;
+				right: 4.08%;
+				transform: translateY(0);
+				transition: all 0.8s ease;
+			}
+			&:nth-child(2) {
+				animation: arrowup2 16s infinite;
+
+				bottom: 5.72%;
+				right: 4.08%;
+				transform: translateY(0);
+				transition: all 0.8s ease;
+			}
+		}
+	}
+
+	&:hover,
+	&:active {
+		svg:nth-child(1),
+		svg:nth-child(2) {
+			animation: none;
+			transform: translateY(0%);
+		}
+	}
 }

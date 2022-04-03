@@ -70,6 +70,8 @@
 		width: 11rem;
 		height: 11rem;
 		transition: all 0.6s ease-in-out;
+		fill: #e5ac31;
+		opacity: 0.85;
 		&-2 {
 			opacity: 0;
 			width: 10rem;
@@ -77,6 +79,8 @@
 			position: absolute;
 			top: -20%;
 			left: 0%;
+
+			fill: #e5ac31;
 			transition: all 0.6s ease-in-out;
 		}
 	}
@@ -100,7 +104,7 @@
 	}
 }
 .main-btn:hover .main-btn--icon-2 {
-	opacity: 1;
+	opacity: 0.85;
 	width: 10rem;
 	visibility: visible;
 	transform: translateX(-4rem);

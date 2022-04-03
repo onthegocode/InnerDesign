@@ -9,14 +9,22 @@
 		<title>Inner Design</title>
 	</head>
 	<body>
+		<a href="#sidebar" class="scroll-top" id="scroll-top"
+			><svg class="test">
+				<use xlink:href="content/sprite.svg#icon-arrow-up"></use>
+			</svg>
+			<svg>
+				<use xlink:href="content/sprite.svg#icon-arrow-up"></use></svg
+		></a>
 		<div class="scroll-progress" id="scroll-progress"></div>
-		<a href="#sidebar" class="scroll-top" id="scroll-top">Arrow</a>
 		<div class="container">
 			<div class="sidebar" id="sidebar">
-				<div class=""></div>
 				<input type="checkbox" class="sidebar__checkbox" id="navi-toggle" />
+				<div class="container__circle">
+					<div class="sidebar__circle"></div>
+				</div>
 				<label for="navi-toggle" class="sidebar__button">
-					<span class="sidebar__icon">&nbsp;</span>
+					<a class="sidebar__icon"></a>
 				</label>
 				<nav class="nav">
 					<ul class="nav__items">
@@ -41,7 +49,7 @@
 								poster="content/header-2x.png"
 							>
 								<source
-									src="content/header.mp4"
+									src="content/header2.mp4"
 									type="
 						video/mp4"
 								/>
@@ -51,6 +59,7 @@
 									<svg class="main-btn--icon">
 										<use xlink:href="content/sprite.svg#icon-play"></use>
 									</svg>
+
 									<svg class="main-btn--icon-2">
 										<use xlink:href="content/sprite.svg#icon-play"></use>
 									</svg>
@@ -65,9 +74,8 @@
 						</a>
 					</div>
 					<figcaption class="caption--1 fade">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-						commodo nulla condimentum in. Volutpat, sociis amet, scelerisque sit
-						sed et non.
+						"The light is what guides you home, the warmth is what keeps you
+						there." &mdash; <em>Ellie Rodriguez</em>
 					</figcaption>
 				</figure>
 			</header>

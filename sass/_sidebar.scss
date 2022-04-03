@@ -1,10 +1,84 @@
 .sidebar {
 	grid-area: 1 / 11 / 2 / -1;
 	justify-self: center;
-	background-color: goldenrod;
-	padding: 6rem;
+	background-color: $color-primary;
+	padding: 8rem;
 	max-height: 70rem;
 	animation: fadedownsidebar 1s ease-in-out;
+	position: relative;
+	overflow: hidden;
+	&__button {
+		width: 6rem;
+		height: 6rem;
+		position: absolute;
+		right: 1.3rem;
+		top: 1.6rem;
+		cursor: pointer;
+		z-index: 101;
+		&:hover .sidebar__icon::after {
+			transform: translateY(-16px);
+		}
+		&:hover .sidebar__icon::before {
+			transform: translateY(16px);
+		}
+	}
+	&__icon {
+		backface-visibility: hidden;
+		display: inline-block;
+		height: 6px;
+		width: 6rem;
+		background-color: #fff;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 12;
+		transition: all 0.4s;
+		&::after,
+		&::before {
+			content: "";
+			height: 6px;
+			width: 6rem;
+			background-color: #fff;
+			position: absolute;
+			transition: all 0.4s;
+		}
+		&::after {
+			transform: translateY(-15px);
+		}
+		&::before {
+			transform: translateY(15px);
+		}
+	}
+	&__checkbox {
+		display: none;
+		&:checked ~ .sidebar__button {
+			.sidebar__icon {
+				background-color: transparent;
+				&::after {
+					transform: rotate(-225deg);
+				}
+				&::before {
+					transform: rotate(225deg);
+				}
+			}
+		}
+		&:checked ~ .container__circle {
+			.sidebar__circle {
+				transform: scale(100);
+			}
+		}
+	}
+	&__circle {
+		width: 6rem;
+		height: 6rem;
+		position: absolute;
+		right: 1.3rem;
+		top: 1.6rem;
+		background-color: $color-primary;
+		border-radius: 100%;
+		transition: all 0.6s ease-in-out;
+		z-index: 100;
+	}
 }
 .nav {
 	opacity: 0;

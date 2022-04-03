@@ -1,5 +1,6 @@
 let video = document.querySelector(".video");
 let myVideo = document.getElementById("video");
+let videoPlayer = document.querySelector(".video-player");
 let color = document.querySelector(".bar");
 let btn = document.getElementById("play-pause");
 let mainBtn = document.querySelector(".main-btn");
@@ -9,6 +10,7 @@ function togglePlayPause() {
 		video.play();
 		btn.style.cursor = "pointer";
 		mainBtn.style.display = "none";
+		videoPlayer.style.animation = "none";
 	} else {
 		btn.className = "play";
 		video.pause();
@@ -28,6 +30,7 @@ video.addEventListener("timeupdate", function () {
 		mainBtn.style.display = "flex";
 		video.currentTime = 0;
 		video.load();
+		videoPlayer.style.animation = "fadedownheader 0.8s ease-in-out";
 	}
 });
 
