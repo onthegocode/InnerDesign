@@ -1,11 +1,15 @@
 .sidebar {
 	background-color: $color-primary;
 	padding: 8rem;
-	max-height: 70rem;
+	max-height: 40vw;
 	animation: fadedownsidebar 1s ease-in-out;
 	position: relative;
 	grid-area: 1 / 11 / 2 / -1;
 	justify-self: center;
+	@media only screen and (max-width: $bp-large) {
+		justify-self: right;
+	}
+
 	&__button {
 		width: 6rem;
 		height: 6rem;
@@ -31,7 +35,7 @@
 		top: 50%;
 		transform: translateY(-50%);
 		z-index: 12;
-		transition: all 0.4s;
+		// transition: all 0.4s;
 		&::after,
 		&::before {
 			content: "";
@@ -40,12 +44,25 @@
 			background-color: #fff;
 			position: absolute;
 			transition: all 0.4s;
+			@media only screen and (max-width: $bp-large) {
+				height: 6px;
+				width: 6rem;
+				border-radius: 1px;
+			}
 		}
 		&::after {
 			transform: translateY(-15px);
 		}
 		&::before {
 			transform: translateY(15px);
+		}
+		@media only screen and (max-width: $bp-large) {
+			position: fixed;
+			top: 3.4%;
+			right: 2%;
+			height: 6px;
+			width: 6rem;
+			border-radius: 1px;
 		}
 	}
 	&__circle {
@@ -56,28 +73,59 @@
 		top: 1.6rem;
 		background-color: $color-primary;
 		border-radius: 100%;
-		transition: all 0.6s ease-in-out;
+		transition: all 0.8s ease-in-out;
 		z-index: 100;
+		@media only screen and (max-width: $bp-large) {
+			position: fixed;
+			top: 0%;
+			right: 0%;
+			width: 7.2rem;
+			height: 8rem;
+			width: 100%;
+			border-radius: 0%;
+			background-color: $color-primary;
+			opacity: 0;
+		}
 	}
 	&__checkbox {
 		display: none;
 		&:checked ~ .sidebar__button {
 			.sidebar__icon {
 				background-color: transparent;
+				position: fixed;
+				top: 4.8%;
+				right: 4.6%;
 				&::after {
 					transform: rotate(-225deg);
 				}
 				&::before {
 					transform: rotate(225deg);
 				}
+				@media only screen and (max-width: $bp-large) {
+					top: 3.8%;
+					right: 2%;
+				}
 			}
 		}
 		&:checked ~ .container__circle {
+			.nav {
+				opacity: 1;
+				width: 100%;
+				visibility: visible;
+				&__items {
+					transform: translate(-50%, -50%);
+				}
+			}
 			.sidebar__circle {
-				transform: scale(100);
+				transform: scale(200);
 				position: fixed;
-				right: 1.3rem;
+				right: 3.3rem;
 				top: 1.6rem;
+				@media only screen and (max-width: $bp-large) {
+					top: 1.2%;
+					right: 1.2%;
+					opacity: 1;
+				}
 			}
 		}
 	}
@@ -86,20 +134,55 @@
 	opacity: 0;
 	width: 0;
 	visibility: hidden;
+	position: fixed;
+	transition: all 0.6s ease-out;
+	z-index: 101;
 	&__items {
-		list-style: none;
 		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		list-style: none;
+		top: 40%;
+		left: 52%;
+		transform: translate(100%, -50%);
 		text-align: center;
-		z-index: 10;
+		transition: all 1s;
+
+		li:not(:last-child) {
+			margin-bottom: 2rem;
+		}
 	}
 
-	li a {
+	li a:link,
+	li a:visited {
 		font-family: $main-font;
-		font-size: 10rem;
+		font-size: 8rem;
+		font-weight: 500;
 		text-decoration: none;
-		color: $color-black;
+		white-space: nowrap;
+		color: #fff;
+		padding: 0 3rem;
+		text-transform: uppercase;
+		background-image: linear-gradient(
+			120deg,
+			transparent 0%,
+			transparent 50%,
+			#fff 50%
+		);
+		background-size: 250%;
+		transition: all 0.6s;
+		@media only screen and (max-width: $bp-mobile) {
+			font-size: 6rem;
+		}
+		@media only screen and (max-width: $bp-mobile-extrasmall) {
+			font-size: 5rem;
+		}
 	}
+	li a:hover,
+	li a:active {
+		color: $color-primary;
+		background-position: 100% center;
+		transform: translateX(12rem);
+	}
+}
+.sidebar__visible {
+	opacity: 1 !important;
 }

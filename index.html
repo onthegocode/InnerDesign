@@ -18,25 +18,31 @@
 		></a>
 		<div class="scroll-progress" id="scroll-progress"></div>
 		<div class="container">
-			<header class="header">
+			<header class="header visible2">
 				<div class="sidebar" id="sidebar">
 					<input type="checkbox" class="sidebar__checkbox" id="navi-toggle" />
 					<div class="container__circle">
-						<div class="sidebar__circle"></div>
+						<nav class="nav">
+							<ul class="nav__items">
+								<li>
+									<a class="nav__items--1" href="#interior">Interior</a>
+								</li>
+								<li>
+									<a class="nav__items--2" href="#styles">Styles</a>
+								</li>
+								<li>
+									<a class="nav__items--3" href="#design">Design</a>
+								</li>
+								<li>
+									<a class="nav__item--4" href="/contact-us.html">Contact Us</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="sidebar__circle visible"></div>
 					</div>
 					<label for="navi-toggle" class="sidebar__button">
 						<a class="sidebar__icon"></a>
 					</label>
-					<nav class="nav">
-						<ul class="nav__items">
-							<li><a class="nav__items--1" href="#interior">Interior</a></li>
-							<li><a class="nav__items--2" href="#styles">Styles</a></li>
-							<li><a class="nav__items--3" href="#design">Design</a></li>
-							<li>
-								<a class="nav__item--4" href="/contact-us">Get in Touch</a>
-							</li>
-						</ul>
-					</nav>
 				</div>
 				<figure>
 					<div class="video-player">
@@ -63,7 +69,7 @@
 									<svg class="main-btn--icon-2">
 										<use xlink:href="content/sprite.svg#icon-play"></use>
 									</svg>
-									<div class="main-btn--text ml-small">Play Video</div>
+									<div class="main-btn--text ml-small visual">Play Video</div>
 								</div>
 							</button>
 							<div class="controls">

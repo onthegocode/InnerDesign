@@ -10,10 +10,35 @@
 		object-fit: cover;
 		object-position: bottom;
 		overflow: hidden;
+
+		@media only screen and (max-width: $bp-medium) {
+			height: 65vh;
+		}
+		@media only screen and (max-width: $bp-small) {
+			height: 90vh;
+		}
 	}
 	figure {
 		grid-area: 1 / 2 / 1 / 12;
 		z-index: 4;
+		@media only screen and (max-width: $bp-large) {
+			grid-area: 1 / 1 / 1 / -1;
+		}
+	}
+	// Media Queries
+	@media only screen and (max-width: $bp-huge) {
+		grid-template-rows: 80vh;
+	}
+	@media only screen and (max-width: $bp-large) {
+		grid-template-rows: 68vh;
+	}
+	@media only screen and (max-width: $bp-medium) {
+		grid-template-rows: 70vh;
+		margin-bottom: 6rem;
+	}
+	@media only screen and (max-width: $bp-small) {
+		grid-template-rows: 100vh;
+		margin-bottom: 0;
 	}
 }
 
@@ -68,6 +93,32 @@
 	top: 35%;
 	left: 15%;
 	cursor: pointer;
+	@media only screen and (max-width: $bp-small) {
+		top: 30%;
+		left: 35%;
+		background-color: rgba(#fff, 0.9);
+		border-radius: 100%;
+		padding: 4rem;
+		transition: all 0.4s;
+		&:hover,
+		&:active {
+			background-color: rgba(#fff, 1);
+			transform: scale(1.05);
+		}
+	}
+	@media only screen and (max-width: $bp-mobile) {
+		left: 32%;
+	}
+	@media only screen and (max-width: $bp-mobile-medium) {
+		left: 28%;
+	}
+	@media only screen and (max-width: $bp-mobile-small) {
+		left: 25%;
+	}
+	@media only screen and (max-width: $bp-mobile-extrasmall) {
+		left: 22%;
+	}
+
 	& > div {
 		display: flex;
 	}
@@ -78,16 +129,31 @@
 		transition: all 0.6s ease-in-out;
 		fill: #e5ac31;
 		opacity: 0.85;
+		@media only screen and (max-width: $bp-small) {
+			width: 15rem;
+			height: 15rem;
+			opacity: 1;
+			transform: translateX(2rem);
+		}
+
 		&-2 {
 			opacity: 0;
 			width: 10rem;
 			visibility: hidden;
 			position: absolute;
-			top: -20%;
+			top: -16%;
 			left: 0%;
-
 			fill: #e5ac31;
 			transition: all 0.6s ease-in-out;
+			@media only screen and (max-width: $bp-large) {
+				top: -32%;
+			}
+
+			@media only screen and (max-width: $bp-small) {
+				width: 20rem !important;
+				top: 0%;
+				left: -10%;
+			}
 		}
 	}
 	&--text {
@@ -114,7 +180,16 @@
 	width: 10rem;
 	visibility: visible;
 	transform: translateX(-4rem);
+	@media only screen and (max-width: $bp-small) {
+		display: none;
+	}
 }
 .main-btn:hover .main-btn--icon {
 	transform: translateX(2rem);
+}
+
+.visual {
+	@media only screen and (max-width: $bp-small) {
+		display: none;
+	}
 }

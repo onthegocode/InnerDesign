@@ -64,6 +64,8 @@ document.addEventListener("scroll", scrollProgress);
 	var windowHeight;
 
 	function init() {
+		elementvisible = document.querySelectorAll(".visible");
+		elementvisible2 = document.querySelectorAll(".visible2");
 		elements = document.querySelectorAll(".hidden");
 		elements2 = document.querySelectorAll(".hidden2");
 		elements3 = document.querySelectorAll(".hidden3");
@@ -123,6 +125,20 @@ document.addEventListener("scroll", scrollProgress);
 				element.classList.remove("hidden5");
 			}
 		}
+		//sidebar
+		for (var i = 0; i < elementvisible2.length; i++) {
+			var element = elementvisible[i];
+			var element2 = elementvisible2[i];
+			var positionFromTop = elementvisible2[i].getBoundingClientRect().bottom;
+
+			if (positionFromTop - windowHeight / 6 <= 0) {
+				element.classList.add("sidebar__visible");
+				element.classList.remove("visible");
+				element2.classList.remove("visible2");
+			} else {
+				element.classList.remove("sidebar__visible");
+			}
+		}
 	}
 
 	window.addEventListener("scroll", checkPosition);
@@ -139,3 +155,52 @@ document.onscroll = function () {
 		document.getElementById("scroll-top").style.display = "none";
 	}
 };
+
+// Toggle nav
+
+let navLink1 = document.querySelector(".nav__items--1");
+let navLink2 = document.querySelector(".nav__items--2");
+let navLink3 = document.querySelector(".nav__items--3");
+let navLink4 = document.querySelector(".nav__items--4");
+let sideNav = document.getElementById("navi-toggle");
+navLink1.addEventListener("click", function checkBox1() {
+	document.getElementById("navi-toggle").checked = false;
+});
+navLink2.addEventListener("click", function checkBox2() {
+	document.getElementById("navi-toggle").checked = false;
+});
+navLink3.addEventListener("click", function checkBox3() {
+	document.getElementById("navi-toggle").checked = false;
+});
+navLink4.addEventListener("click", function checkBox4() {
+	document.getElementById("navi-toggle").checked = false;
+});
+
+// This is causing everything below the header to not work?
+//Smooth Scroll
+
+// function smoothScroll(target, duration) {
+// 	let target = document.querySelector(target);
+// 	let targetPosition = document.getBoundingClientRect().top;
+// 	let startPosition = window.pageYOffset;
+// 	let distance = targetPosition - startPosition;
+// 	let startTime = null;
+// }
+// smoothScroll(".container", 1000);
+
+const links = document.querySelectorAll(".header");
+
+for (const link of links) {
+	link.addEventListener("click", clickHandler);
+}
+
+function clickHandler(e) {
+	e.preventDefault();
+	const href = this.getAttribute("href");
+	const offsetTop = document.querySelector(href).offsetTop;
+
+	scroll({
+		top: offsetTop,
+		behavior: "smooth",
+	});
+}

@@ -4,6 +4,9 @@
 	font-size: 1.2rem;
 	margin-top: 3rem;
 	color: $color-black;
+	@media only screen and (max-width: $bp-mobile) {
+		font-size: 1.4rem;
+	}
 }
 .caption--2 {
 	font-family: $main-font;
@@ -25,12 +28,21 @@
 	font-family: $main-font;
 	font-weight: bold;
 	font-size: 8rem;
+	@media only screen and (max-width: $bp-medium-small) {
+		font-size: 6rem;
+	}
+	@media only screen and (max-width: $bp-mobile-medium) {
+		font-size: 5rem;
+	}
 }
 .heading-2 {
 	font-family: $main-font;
 	font-weight: bold;
 	font-size: 5.4rem;
 	color: $color-black;
+	@media only screen and (max-width: $bp-medium-small) {
+		font-size: 4rem;
+	}
 }
 .heading-3 {
 }

@@ -31,6 +31,12 @@
 		height: 100%;
 		z-index: 1;
 		opacity: 0;
+		@media only screen and (max-width: $bp-large) {
+			justify-self: right;
+		}
+		@media only screen and (max-width: $bp-medium) {
+			display: none;
+		}
 	}
 	&__img {
 		display: block;
@@ -43,6 +49,16 @@
 		max-height: 80rem;
 		width: 100%;
 		opacity: 0;
+		@media only screen and (max-width: $bp-large) {
+			grid-area: 2 / 6 / 13 / 12;
+		}
+		@media only screen and (max-width: $bp-medium) {
+			grid-area: 1 / 1 / 12 / -1;
+			width: 100%;
+		}
+		@media only screen and (max-width: $bp-mobile-extrasmall) {
+			display: none;
+		}
 	}
 	&__content {
 		grid-area: 6 / 1 / 16 / 9;
@@ -60,6 +76,34 @@
 		z-index: 3;
 		padding-bottom: 16rem;
 		opacity: 0;
+		@media only screen and (max-width: $bp-large) {
+			grid-area: 6 / 1 / 16 / 10;
+			background: linear-gradient(
+				to right,
+				transparent 10%,
+				transparent 10%,
+				#fff 50%,
+				#fff 90%,
+				#fff 100%
+			);
+		}
+		@media only screen and (max-width: $bp-medium) {
+			background: #fff;
+			width: 100%;
+			grid-area: 3 / 2 / 11 / -1;
+		}
+		@media only screen and (max-width: $bp-medium-small) {
+			padding: 2.4rem 3.8rem;
+			grid-area: 3 / 1 / 11 / -1;
+		}
+		@media only screen and (max-width: $bp-mobile-medium) {
+			padding: 3.2rem 1.6rem;
+			grid-area: 2 / 1 / 11 / -1;
+		}
+		@media only screen and (max-width: $bp-mobile-extrasmall) {
+			grid-area: 1 / 1 / -1 / -1;
+			padding: 3rem 1rem;
+		}
 	}
 	&__text {
 		transform: translateX(-30%) rotate(-90deg);
@@ -68,5 +112,18 @@
 		justify-self: start;
 		align-self: end;
 		opacity: 0;
+		@media only screen and (max-width: $bp-large) {
+			transform: translateX(-10%) rotate(-90deg);
+		}
+		@media only screen and (max-width: $bp-medium) {
+			display: none;
+		}
+	}
+
+	@media only screen and (max-width: $bp-large) {
+		grid-area: 3 / 1 / 4 / -1;
+	}
+	@media only screen and (max-width: $bp-medium) {
+		margin: 0;
 	}
 }

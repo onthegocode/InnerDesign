@@ -10,7 +10,9 @@
 	display: grid;
 	align-content: center;
 	width: 100%;
-
+	@media only screen and (max-width: $bp-large) {
+		grid-area: 4 / 1 / 5 / -1;
+	}
 	&__animate {
 		.dream {
 			&__items {
