@@ -189,10 +189,7 @@ navLink4.addEventListener("click", function checkBox4() {
 // smoothScroll(".container", 1000);
 
 const links = document.querySelectorAll(".header");
-
-for (const link of links) {
-	link.addEventListener("click", clickHandler);
-}
+links.forEach(link=>link.addEventListener("click", clickHandler));
 
 function clickHandler(e) {
 	e.preventDefault();
